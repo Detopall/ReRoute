@@ -1,16 +1,58 @@
 import { useEffect, useRef, useState } from 'react';
 import * as maplibregl from 'maplibre-gl';
-import MapLibreWorker from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&inline';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import type { ThemeMode } from '../types';
 
-// Configure inline worker class to eliminate external chunk fetching on GitHub Pages
-(maplibregl as any).workerClass = MapLibreWorker;
-
-// OpenFreeMap vector styles: 100% free, CORS enabled, HTTPS native, perfect for GitHub Pages
-const STYLES: Record<ThemeMode, string> = {
-  dark: 'https://tiles.openfreemap.org/styles/dark',
-  light: 'https://tiles.openfreemap.org/styles/bright',
+// Standard OpenStreetMap tile sources (100% free, no API key required, HTTPS native)
+const STYLES: Record<ThemeMode, maplibregl.StyleSpecification> = {
+  dark: {
+    version: 8,
+    sources: {
+      'osm-tiles': {
+        type: 'raster',
+        tiles: [
+          'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        ],
+        tileSize: 256,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      },
+    },
+    layers: [
+      {
+        id: 'osm-tiles-layer',
+        type: 'raster',
+        source: 'osm-tiles',
+        minzoom: 0,
+        maxzoom: 19,
+      },
+    ],
+  },
+  light: {
+    version: 8,
+    sources: {
+      'osm-tiles': {
+        type: 'raster',
+        tiles: [
+          'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        ],
+        tileSize: 256,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      },
+    },
+    layers: [
+      {
+        id: 'osm-tiles-layer',
+        type: 'raster',
+        source: 'osm-tiles',
+        minzoom: 0,
+        maxzoom: 19,
+      },
+    ],
+  },
 };
 
 const DEFAULT_NYC: [number, number] = [-74.0060, 40.7128];
