@@ -4,9 +4,6 @@ import { defineConfig } from "vite";
 export default defineConfig({
 	base: "./",
 	plugins: [react()],
-	optimizeDeps: {
-		exclude: ["maplibre-gl"],
-	},
 	resolve: {
 		alias: {
 			"@": `${import.meta.dirname}/src`,
