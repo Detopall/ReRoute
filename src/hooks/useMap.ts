@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import * as maplibregl from 'maplibre-gl';
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import type { ThemeMode } from '../types';
+
+// Configure MapLibre GL worker URL explicitly using the exact worker file (.mjs?url)
+maplibregl.setWorkerUrl(maplibreWorkerUrl);
 
 // OpenFreeMap vector styles: 100% free, CORS enabled, HTTPS native, perfect for GitHub Pages
 const STYLES: Record<ThemeMode, string> = {
