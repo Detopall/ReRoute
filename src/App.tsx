@@ -18,7 +18,7 @@ import { RouteInfoPanel } from './components/RouteInfoPanel';
 import { Toast } from './components/Toast';
 import { ModeIndicator } from './components/ModeIndicator';
 import { ScrollArea } from './components/ui/scroll-area';
-import type { LatLng, BlacklistItem, InteractionMode, NominatimResult, ThemeMode } from './types';
+import type { LatLng, BlacklistItem, InteractionMode, NominatimResult, ThemeMode, AvoidanceSensitivity } from './types';
 
 const STORAGE_KEY = 'reroute_blacklists_v1';
 const THEME_STORAGE_KEY = 'reroute_theme_v1';
