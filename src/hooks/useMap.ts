@@ -3,9 +3,10 @@ import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import type { ThemeMode } from '../types';
 
-const STYLES = {
-  dark: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
-  light: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+// OpenFreeMap vector styles: 100% free, CORS enabled, HTTPS native, perfect for GitHub Pages
+const STYLES: Record<ThemeMode, string> = {
+  dark: 'https://tiles.openfreemap.org/styles/dark',
+  light: 'https://tiles.openfreemap.org/styles/bright',
 };
 
 const DEFAULT_NYC: [number, number] = [-74.0060, 40.7128];
