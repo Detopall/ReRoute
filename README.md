@@ -2,6 +2,10 @@
 
 A client-side navigation web application that allows you to calculate optimal driving routes while avoiding custom blacklisted roads and geographic areas. Built to run statically on GitHub Pages with no backend required.
 
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/h7j3P__1ub4/0.jpg)](https://www.youtube.com/watch?v=h7j3P__1ub4)
+
 ## Key Features
 
 - **Custom Blacklisting**: Blacklist specific road segments or draw custom polygon zones directly on the map.
