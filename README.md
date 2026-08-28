@@ -20,7 +20,7 @@ A client-side navigation web application that allows you to calculate optimal dr
 
 - **Core Framework**: React 18, TypeScript, Vite
 - **Mapping**: MapLibre GL JS
-- **Tile Provider**: CartoDB (Dark Matter & Positron)
+- **Tile Provider**: OpenStreetMap
 - **Geospatial Computations**: Turf.js
 - **Routing Engine**: Open Source Routing Machine (OSRM)
 - **Geocoding**: OpenStreetMap Nominatim
